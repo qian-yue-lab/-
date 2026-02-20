@@ -11,7 +11,7 @@
 
         body {
             margin: 0;
-            padding: 15px;
+            padding: 20px;
             background: #c2cad4;
             color: white;
             text-align: center;
@@ -24,31 +24,31 @@
         }
         
         h1 {
-            margin-bottom: 20px;
-            font-size: 2em; /* 移动端稍小 */
+            margin-bottom: 25px;
+            font-size: 2.8em; /* 放大标题 */
         }
         
         .image-container {
-            max-width: 95%;
-            margin: 15px auto;
+            max-width: 100%;
+            margin: 25px auto;
         }
         
         img {
             max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
         
         audio {
-            margin-top: 15px;
-            width: 95%;
-            max-width: 350px;
+            margin-top: 25px;
+            width: 100%;
+            max-width: 500px; /* 放大音频控件 */
         }
         
         h2 {
-            margin-top: 20px;
-            font-size: 1.2em;
-            line-height: 1.5; /* 增加行高，避免诗句挤在一起 */
+            margin-top: 30px;
+            font-size: 1.8em; /* 放大诗句 */
+            line-height: 1.6;
         }
 
         /* 倒计时样式 */
@@ -62,7 +62,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 6rem; /* 移动端数字缩小 */
+            font-size: 12rem; /* 放大倒计时数字 */
             color: white;
             z-index: 9999;
         }
@@ -75,13 +75,13 @@
 
         /* 播放按钮样式 */
         #playButton {
-            margin-top: 15px;
-            padding: 10px 20px;
-            font-size: 1em;
+            margin-top: 25px;
+            padding: 15px 30px;
+            font-size: 1.4em; /* 放大按钮文字 */
             background: #ffffff;
             color: #c2cad4;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -91,23 +91,29 @@
             transform: scale(1.05);
         }
 
-        /* 响应式调整：针对小屏幕手机 */
+        /* 响应式调整：针对小屏幕手机，进一步放大 */
         @media (max-width: 480px) {
             h1 {
-                font-size: 1.8em;
+                font-size: 3em;
             }
             h2 {
-                font-size: 1.1em;
+                font-size: 2em;
             }
             #countdown {
-                font-size: 5rem;
+                font-size: 15rem;
+            }
+            p {
+                font-size: 1.5em;
+            }
+            a {
+                font-size: 1.3em;
             }
         }
     </style>
 </head>
 <body>
     <!-- 倒计时层 -->
-    <div id="countdown">10</div>
+    <div id="countdown">3</div>
 
     <!-- 页面内容 -->
     <div id="content">
@@ -128,13 +134,13 @@
         
         <h2>愿汝久沐晴川日，风月知秋伴清欢</h2>
         
-        <p style="font-family: KaiTi; font-size: larger; margin-top: 20px;">山止川行，风禾尽起</p >
-        <a href=" " style="display: inline-block; margin-top: 15px; color: #ffffff;">友情链接</a >
+        <p style="font-family: KaiTi; font-size: larger; margin-top: 25px;">山止川行，风禾尽起</p >
+        <a href=" " style="display: inline-block; margin-top: 20px; color: #ffffff;">友情链接</a >
     </div>
 
     <script>
         // 倒计时逻辑
-        let countdownNumber = 10;
+        let countdownNumber = 3;
         const countdownEl = document.getElementById('countdown');
         const contentEl = document.getElementById('content');
 
@@ -175,4 +181,3 @@
     </script>
 </body>
 </html>
-
