@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>你好，世界！</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            padding: 20px;
+            padding: 15px;
             background: #c2cad4;
             color: white;
             text-align: center;
@@ -20,13 +24,13 @@
         }
         
         h1 {
-            margin-bottom: 30px;
-            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-size: 2em; /* 移动端稍小 */
         }
         
         .image-container {
-            max-width: 90%;
-            margin: 20px auto;
+            max-width: 95%;
+            margin: 15px auto;
         }
         
         img {
@@ -36,14 +40,15 @@
         }
         
         audio {
-            margin-top: 20px;
-            width: 90%;
-            max-width: 400px;
+            margin-top: 15px;
+            width: 95%;
+            max-width: 350px;
         }
         
         h2 {
-            margin-top: 30px;
-            font-size: 1.5em;
+            margin-top: 20px;
+            font-size: 1.2em;
+            line-height: 1.5; /* 增加行高，避免诗句挤在一起 */
         }
 
         /* 倒计时样式 */
@@ -57,7 +62,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 10rem;
+            font-size: 6rem; /* 移动端数字缩小 */
             color: white;
             z-index: 9999;
         }
@@ -65,13 +70,14 @@
         /* 页面内容默认隐藏 */
         #content {
             display: none;
+            width: 100%;
         }
 
         /* 播放按钮样式 */
         #playButton {
-            margin-top: 20px;
-            padding: 12px 24px;
-            font-size: 1.2em;
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1em;
             background: #ffffff;
             color: #c2cad4;
             border: none;
@@ -84,6 +90,19 @@
             background: #e0e0e0;
             transform: scale(1.05);
         }
+
+        /* 响应式调整：针对小屏幕手机 */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.1em;
+            }
+            #countdown {
+                font-size: 5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -95,7 +114,7 @@
         <h1>生日快乐!</h1>
         
         <div class="image-container">
-            <img src="https://raw.githubusercontent.com/qian-yue-lab/-/main/自嘲熊.jpg" alt="生日图片">
+            < img src="https://raw.githubusercontent.com/qian-yue-lab/-/main/自嘲熊.jpg" alt="生日图片">
         </div>
         
         <div>
@@ -109,8 +128,8 @@
         
         <h2>愿汝久沐晴川日，风月知秋伴清欢</h2>
         
-        <p style="font-family: KaiTi;font-size: larger;">山止川行，风禾尽起</p >
-        <a href=" ">友情链接</a >
+        <p style="font-family: KaiTi; font-size: larger; margin-top: 20px;">山止川行，风禾尽起</p >
+        <a href=" " style="display: inline-block; margin-top: 15px; color: #ffffff;">友情链接</a >
     </div>
 
     <script>
@@ -133,7 +152,7 @@
         // 简单的图片加载失败处理
         document.querySelector('img').onerror = function() {
             console.log('图片加载失败，尝试重新加载');
-            this.src = 'https://raw.githubusercontent.com/qian-yue-lab/-/main/自嘲熊.jpg' + Date.now();
+            this.src = 'https://raw.githubusercontent.com/qian-yue-lab/-/main/自嘲熊.jpg?' + Date.now();
         };
         
         // 音频播放逻辑：由按钮触发
